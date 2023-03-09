@@ -3,16 +3,28 @@
 import "../App.css";
 import ItemCard from "./ItemCard";
 
-const ListItems = () => {
+const ListItems = (props) => {
+  const { setAllItems, setSearchTerm, allItems, basketItems, setBasketItems } =
+    props;
+
   return (
     <div>
       <p>List of all items</p>
-      <ItemCard />
+      <ul id="itemList">
+        {allItems.map((item) => {
+          return (
+            <li key={item.item_id}>
+              <ItemCard
+                item={item}
+                basketItems={basketItems}
+                setBasketItems={setBasketItems}
+              />
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
-
-
-
 
 export default ListItems;

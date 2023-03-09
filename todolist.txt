@@ -6,4 +6,6 @@ TO DO list
            - check dependencies
 
 - App.js - initial states and router addresses
+
+//
 - utils - fetching data functions

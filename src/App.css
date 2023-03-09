@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-color: #FAF9F6;
 }
 
 .App-logo {
@@ -35,4 +36,83 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#itemCard{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: auto;
+    line-height: 150%;
+    min-height: 100px;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 2rem;
+    margin: 1rem;
+    background-color: white;
+    flex-grow: 1;
+    
+}
+
+#itemCard:hover{
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,0.2);
+}
+
+#itemList{
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.primaryButton{
+  background-color: #1143f8;
+  color: white;
+  font-weight: 600;
+  border-radius: 8px;
+  border-width: 1.5px;
+  min-width: 100% ;
+  min-height: 35px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+.primaryButton:hover{
+  opacity: 70%;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+  
+}
+
+.secondaryButton{
+  background-color: white;
+  color: #1143f8;
+  font-weight: 600;
+  border-radius: 8px;
+  border-width: 1px;
+  min-width: 100% ;
+  min-height: 35px;
+  margin-bottom: 5px;
+  margin-top:5px;
+}
+
+.secondaryButton:hover{
+  opacity: 70%;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2);
+}
+
+
+.itemPicSmall{
+  max-width: 100px;
+  max-height: 100px;
+  flex-basis: auto;
+  align-content: center ;
+}
+
+.internalListSmall{
+  list-style: none;
+
+}
+
+.li{
+  align-content: center;
+  text-align: center;
 }
