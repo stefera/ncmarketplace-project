@@ -1,0 +1,9 @@
+TO DO list
+
+- create files and link them
+- install - React Router (npm -i react-router-dom)
+           - axios npm i axios
+           - check dependencies
+
+- App.js - initial states and router addresses
+- utils - fetching data functions

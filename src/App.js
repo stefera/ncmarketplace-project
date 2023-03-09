@@ -1,23 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import SearchGroup from "./components/SearchGroup";
+import ItemGroup from "./components/ItemGroup";
+import ListItems from "./components/ListItems";
+import Header from "./components/Header";
+import BasketGroup from "./components/BasketGroup";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+
+      <Routes>
+        <Route
+          path="/items"
+          element={
+            <div>
+              <SearchGroup /> <ListItems />
+            </div>
+          }
+        />
+
+        <Route path="/items/:item_id" element={<ItemGroup />} />
+        <Route path="/users/:username/basket" element={<BasketGroup />} />
+        {/* <Route path="/items/*" element={<div>Item does not exist</div>} /> */}
+        <Route path="/*" element={<div>Page not found</div>} />
+      </Routes>
     </div>
   );
 }
