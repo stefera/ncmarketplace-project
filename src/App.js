@@ -23,7 +23,6 @@ function App() {
 
         <Route path="/items/:item_id" element={<ItemGroup />} />
         <Route path="/users/:username/basket" element={<BasketGroup />} />
-        {/* <Route path="/items/*" element={<div>Item does not exist</div>} /> */}
         <Route path="/*" element={<div>Page not found</div>} />
       </Routes>
     </div>
