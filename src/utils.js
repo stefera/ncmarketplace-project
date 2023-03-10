@@ -32,4 +32,18 @@ export const fetchItemByID = (item_id) => {
     .catch((error) => console.log(error));
 };
 
-export const fetchfilteredItems = (searchTerm) => {};
+
+
+
+
+export const fetchfilteredItems = (searchTerm) => {
+  return axios
+    .get(`https://nc-marketplace-sem-4.onrender.com/api/items?search===${searchTerm}`)
+    .then(({ data }) => {
+      console.log(data, "in utils, filteredList");
+      return data.items;
+    })
+    .catch((error) => console.log(error));
+
+
+};
