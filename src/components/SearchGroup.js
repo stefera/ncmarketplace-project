@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "../App.css";
+import { fetchfilteredItems } from "../utils";
 
 const SearchGroup = ({
   searchTerm,
@@ -14,18 +15,23 @@ const SearchGroup = ({
 
   const resolveSubmit = (event) => {
     event.preventDefault();
+    fetchfilteredItems(newSearchTerm).then((result) => {
+      setAllItems(result);
+    })
   };
-  console.log(newSearchTerm);
+
   return (
     <div>
       <p>SearchGroup</p>
       <form classList="searchForm" onSubmit={resolveSubmit}>
         <label htmlFor="mainSearchInput"></label>
         <input
-          value={searchTerm}
+          value={newSearchTerm}
           id="mainSearchInput"
           onChange={(event) => {
+            
             setNewSearchTerm(event.target.value);
+              console.log(newSearchTerm);
           }}
         ></input>
         <button type="submit">Search</button>
