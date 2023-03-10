@@ -13,7 +13,7 @@ const ListItems = (props) => {
       <ul id="itemList">
         {allItems.map((item) => {
           return (
-            <li key={item.item_id}>
+            <li className = 'liMain' key={item.item_id}>
               <ItemCard
                 item={item}
                 basketItems={basketItems}

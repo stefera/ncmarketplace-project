@@ -10,31 +10,32 @@ const ItemCard = (props) => {
 
   return (
     <div id="itemCard">
-      <h4>{item.item_name}</h4>
-      <ul className="internalListSmall">
-        <li>
-          <img
+        <img
             className="itemPicSmall"
             src={item.img_url}
             alt={item.item_name}
           ></img>
-        </li>
+      <ul className="internalListSmall"> 
+        <li className = 'liSub'> <h4>{item.item_name}</h4> </li> 
+      
+      
+      
 
-        <li>
-          <body id="smallText">£{item.price}</body>
+        <li className = 'liSub'>
+          <p id="smallText">£{item.price}</p>
         </li>
-        <li>
+        <li className = 'liSub'>
           <button className="primaryButton" onClick={resolveClick}>
             {" "}
             Add to basket
           </button>
         </li>
-        <li>
+        {/* <li>
           <button className="secondaryButton" onClick={resolveClickTwo}>
             {" "}
             View
           </button>
-        </li>
+        </li> */}
       </ul>
     </div>
   );
