@@ -22,4 +22,14 @@ export const fetchAllItems = () => {
     .catch((error) => console.log(error));
 };
 
+export const fetchItemByID = (item_id) => {
+  return axios
+    .get(`https://nc-marketplace-sem-4.onrender.com/api/items/${item_id}`)
+    .then(({ data }) => {
+      // console.log(data.item, "in utils");
+      return data.item;
+    })
+    .catch((error) => console.log(error));
+};
+
 export const fetchfilteredItems = (searchTerm) => {};

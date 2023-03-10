@@ -11,6 +11,7 @@ import { fetchAllItems } from "./utils";
 
 function App() {
   const [allItems, setAllItems] = useState([]);
+  const [item, setItem] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [basketItems, setBasketItems] = useState([]);
   const [user, setUser] = useState({});
@@ -36,6 +37,8 @@ function App() {
                 setAllItems={setAllItems}
                 setSearchTerm={setSearchTerm}
                 allItems={allItems}
+                isLoading={isLoading}
+                setIsLoading={setIsLoading}
               />
               <ListItems
                 searchTerm={searchTerm}
@@ -58,6 +61,8 @@ function App() {
               allItems={allItems}
               basketItems={basketItems}
               setBasketItems={setBasketItems}
+              item={item}
+              setItem={setItem}
             />
           }
         />

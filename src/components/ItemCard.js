@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useParams, Link } from "react-router-dom";
 import "../App.css";
 
 const ItemCard = (props) => {
@@ -9,31 +9,32 @@ const ItemCard = (props) => {
   const resolveClickTwo = () => {};
 
   return (
-    <div id="itemCard">
-      <h4>{item.item_name}</h4>
+    <div>
+      <img
+        className="itemPicSmall"
+        src={item.img_url}
+        alt={item.item_name}
+      ></img>
       <ul className="internalListSmall">
-        <li>
-          <img
-            className="itemPicSmall"
-            src={item.img_url}
-            alt={item.item_name}
-          ></img>
+        <li className="liSub">
+          {" "}
+          <h4>{item.item_name}</h4>{" "}
         </li>
 
-        <li>
-          <body id="smallText">£{item.price}</body>
+        <li className="liSub">
+          <p id="smallText">£{item.price}</p>
         </li>
-        <li>
+        <li className="liSub">
           <button className="primaryButton" onClick={resolveClick}>
-            {" "}
             Add to basket
           </button>
         </li>
         <li>
-          <button className="secondaryButton" onClick={resolveClickTwo}>
-            {" "}
-            View
-          </button>
+          <Link to={`/items/${item.item_id}`}>
+            <button className="secondaryButton" onClick={resolveClickTwo}>
+              View
+            </button>
+          </Link>
         </li>
       </ul>
     </div>
